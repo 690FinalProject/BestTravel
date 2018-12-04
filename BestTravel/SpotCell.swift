@@ -11,8 +11,17 @@ import UIKit
 class SpotCell: UITableViewCell {
 
     @IBOutlet weak var spotImage: UIImageView!
-    @IBOutlet weak var spotName: UILabel!
-    @IBOutlet weak var spotDescription: UILabel!
+    @IBOutlet weak var spotNameLabel: UILabel!
+    @IBOutlet weak var spotDescriptionLabel: UILabel!
+    
+    
+    var spot: Spot! {
+        didSet{
+            let spotName = spot.spotName
+                
+            spotNameLabel.text = spotName
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

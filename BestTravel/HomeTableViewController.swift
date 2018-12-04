@@ -11,7 +11,7 @@ import Alamofire
 
 class HomeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //var post: = []
+    var spots: [Spot] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,16 +20,30 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.rowHeight = 150
         tableView.delegate = self
         tableView.dataSource = self
+        
+        fetchSpots()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        //return 10
+        return spots.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpotCell", for: indexPath) as! SpotCell
+        cell.spot = spots[indexPath.row]
         return cell
     }
+    
+    func fetchSpots() {
+        FourSquareAPI().getVenue { (spots: [Spot]?, error: Error?) in
+            if let spots = spots {
+                self.spots = spots
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     
 
 }
