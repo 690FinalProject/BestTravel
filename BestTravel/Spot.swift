@@ -10,11 +10,15 @@ import Foundation
 
 class Spot {
     var spotName: String
+    var description: String
+    
     
     init(dictionary: [String: Any]) {
         let venue = dictionary["venue"] as? [String: Any]
+        let categories = venue!["categories"] as? [[String: Any]]
+        
         spotName = venue!["name"] as? String ?? "No title"
-
+        description = categories![0]["name"] as? String ?? "No description"
     }
     
     //        Alamofire.request(urlString).responseJSON { response in

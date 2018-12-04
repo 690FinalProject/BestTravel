@@ -18,8 +18,11 @@ class SpotCell: UITableViewCell {
     var spot: Spot! {
         didSet{
             let spotName = spot.spotName
-                
             spotNameLabel.text = spotName
+            
+            let spotDescription = spot.description
+            spotDescriptionLabel.text = spotDescription
+            
         }
     }
     
