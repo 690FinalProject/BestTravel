@@ -23,6 +23,11 @@ class SpotCell: UITableViewCell {
             let spotDescription = spot.description
             spotDescriptionLabel.text = spotDescription
             
+            let iconURL = URL(string: spot.IconURL)!
+            spotImage.af_setImage(withURL: iconURL)
+            
+            print(iconURL)
+            
         }
     }
     

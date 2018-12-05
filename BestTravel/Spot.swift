@@ -11,14 +11,20 @@ import Foundation
 class Spot {
     var spotName: String
     var description: String
+    var IconURLprefix: String
+    var IconURLsuffix: String = "bg_64.png"
+    var IconURL: String
     
     
     init(dictionary: [String: Any]) {
         let venue = dictionary["venue"] as? [String: Any]
         let categories = venue!["categories"] as? [[String: Any]]
+        let icon = categories![0]["icon"] as? [String: Any]
         
         spotName = venue!["name"] as? String ?? "No title"
         description = categories![0]["name"] as? String ?? "No description"
+        IconURLprefix = icon!["prefix"] as? String ?? "No IconURLprefix"
+        IconURL = IconURLprefix + IconURLsuffix
     }
     
     //        Alamofire.request(urlString).responseJSON { response in

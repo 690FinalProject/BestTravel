@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'BestTravel' do
     pod 'Alamofire', '~> 4.7'
+    pod 'AlamofireImage'
 end
