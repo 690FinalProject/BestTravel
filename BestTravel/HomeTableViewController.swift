@@ -45,6 +45,13 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) {
+            let spot = spots[indexPath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.spot = spot
+        }
+    }
 
 }

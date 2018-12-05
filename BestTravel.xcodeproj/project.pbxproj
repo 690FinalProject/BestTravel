@@ -15,6 +15,7 @@
 		4E9C82E921AF5CD700C50099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9C82E721AF5CD700C50099 /* LaunchScreen.storyboard */; };
 		4E9C82F421AF5CD700C50099 /* BestTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C82F321AF5CD700C50099 /* BestTravelTests.swift */; };
 		4E9C82FF21AF5CD700C50099 /* BestTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C82FE21AF5CD700C50099 /* BestTravelUITests.swift */; };
+		4EB9A4BC21B887A90072886C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB9A4BB21B887A90072886C /* DetailViewController.swift */; };
 		4EBF39B421B0D88400281EEA /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF39B321B0D88400281EEA /* HomeTableViewController.swift */; };
 		4EBF39B621B0D9E800281EEA /* SpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF39B521B0D9E800281EEA /* SpotCell.swift */; };
 		4ED9CEF121B5FE9B00343450 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED9CEF021B5FE9B00343450 /* Spot.swift */; };
@@ -53,6 +54,7 @@
 		4E9C82FA21AF5CD700C50099 /* BestTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9C82FE21AF5CD700C50099 /* BestTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTravelUITests.swift; sourceTree = "<group>"; };
 		4E9C830021AF5CD700C50099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EB9A4BB21B887A90072886C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4EBF39B321B0D88400281EEA /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		4EBF39B521B0D9E800281EEA /* SpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCell.swift; sourceTree = "<group>"; };
 		4ED9CEF021B5FE9B00343450 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				4E9C82DE21AF5CD600C50099 /* AppDelegate.swift */,
 				4E9C82E021AF5CD600C50099 /* ViewController.swift */,
 				4EBF39B321B0D88400281EEA /* HomeTableViewController.swift */,
+				4EB9A4BB21B887A90072886C /* DetailViewController.swift */,
 				4EBF39B521B0D9E800281EEA /* SpotCell.swift */,
 				4E9C82E221AF5CD600C50099 /* Main.storyboard */,
 				4E9C82E521AF5CD700C50099 /* Assets.xcassets */,
@@ -353,6 +356,7 @@
 				4E9C82DF21AF5CD600C50099 /* AppDelegate.swift in Sources */,
 				4EBF39B621B0D9E800281EEA /* SpotCell.swift in Sources */,
 				4ED9CEF321B6055D00343450 /* FourSquareAPI.swift in Sources */,
+				4EB9A4BC21B887A90072886C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
