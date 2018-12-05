@@ -30,29 +30,40 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpotCell" rowHeight="137" id="l0a-Lq-WgL" customClass="SpotCell" customModule="BestTravel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SpotCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0a-Lq-WgL" id="3oS-Ip-XdS" customClass="SpotCell" customModule="BestTravel" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SpotCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0a-Lq-WgL" id="3oS-Ip-XdS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="136.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smc-kQ-dRy">
-                                                    <rect key="frame" x="15" y="15" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="smc-kQ-dRy">
+                                                    <rect key="frame" x="15.000000000000007" y="15.000000000000007" width="106.66666666666669" height="106.66666666666669"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="smc-kQ-dRy" secondAttribute="height" multiplier="1:1" id="zFt-L1-vdf"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyd-aS-V3l">
-                                                    <rect key="frame" x="145" y="15" width="200" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyd-aS-V3l">
+                                                    <rect key="frame" x="136.66666666666666" y="15.000000000000002" width="262.33333333333337" height="28.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aiz-ci-i72">
-                                                    <rect key="frame" x="145" y="59" width="200" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aiz-ci-i72">
+                                                    <rect key="frame" x="136.66666666666666" y="93.666666666666671" width="262.33333333333337" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="smc-kQ-dRy" firstAttribute="leading" secondItem="3oS-Ip-XdS" secondAttribute="leading" constant="15" id="Ogv-zg-rmL"/>
+                                                <constraint firstItem="Iyd-aS-V3l" firstAttribute="top" secondItem="3oS-Ip-XdS" secondAttribute="top" constant="15" id="P80-Hz-3DO"/>
+                                                <constraint firstItem="Aiz-ci-i72" firstAttribute="top" secondItem="Iyd-aS-V3l" secondAttribute="bottom" constant="50" id="XGf-DA-jHH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Aiz-ci-i72" secondAttribute="trailing" constant="15" id="Zca-Bs-Fev"/>
+                                                <constraint firstItem="Iyd-aS-V3l" firstAttribute="leading" secondItem="smc-kQ-dRy" secondAttribute="trailing" constant="15" id="hLN-9A-3j1"/>
+                                                <constraint firstItem="smc-kQ-dRy" firstAttribute="top" secondItem="3oS-Ip-XdS" secondAttribute="top" constant="15" id="ido-6a-1hJ"/>
+                                                <constraint firstItem="Aiz-ci-i72" firstAttribute="leading" secondItem="smc-kQ-dRy" secondAttribute="trailing" constant="15" id="lvh-mZ-Dst"/>
+                                                <constraint firstAttribute="bottom" secondItem="smc-kQ-dRy" secondAttribute="bottom" constant="15" id="n79-fK-vju"/>
+                                                <constraint firstAttribute="trailing" secondItem="Iyd-aS-V3l" secondAttribute="trailing" constant="15" id="v5r-MO-6em"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="spotDescriptionLabel" destination="Aiz-ci-i72" id="Udt-KA-mHg"/>
