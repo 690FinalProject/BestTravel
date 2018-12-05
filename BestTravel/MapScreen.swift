@@ -13,11 +13,58 @@ class MapScreen: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        checkLocationAuthorization()
         // Do any additional setup after loading the view.
     }
+    
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        }else {
+            
+        }
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            break
+        case .denied:
+            break
+        case .notDetermined:
+            locationManager.requestAlwaysAuthorization()
+        case .restricted:
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
+    
+}
+
+
+    
+    
+extension MapScreen: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocation Location: [CLLocation]){
+            
+    }
+        
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus){
+            
+    }
+}
     
 
     /*
@@ -30,4 +77,4 @@ class MapScreen: UIViewController {
     }
     */
 
-}
+
