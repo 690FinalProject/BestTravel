@@ -26,6 +26,13 @@ class MapScreen: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
+    func centerViewOnUserLocation() {
+        if let location = locationManager.location?.coordinate{
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: 10000, longitudinalMeters: 10000)
+            mapView.setRegion(region, animated: true)
+            
+        }
+    }
     
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
@@ -39,11 +46,12 @@ class MapScreen: UIViewController {
     func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
             break
         case .denied:
             break
         case .notDetermined:
-            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
         case .restricted:
             break
         case .authorizedAlways:
@@ -57,7 +65,7 @@ class MapScreen: UIViewController {
     
     
 extension MapScreen: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocation Location: [CLLocation]){
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations Location: [CLLocation]){
             
     }
         
