@@ -123,24 +123,47 @@
                                     <outlet property="delegate" destination="CM1-Iv-f6w" id="Huf-2h-4Qa"/>
                                 </connections>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="d7o-fP-BAB">
+                                <rect key="frame" x="187" y="408" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Wc-IU-7Zq"/>
+                                    <constraint firstAttribute="width" constant="40" id="Cfe-xH-3ie"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="OSf-FL-Nd7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="lzL-o5-pcO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O01-pk-hIP">
+                                <rect key="frame" x="0.0" y="762" width="414" height="51"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xKX-h3-J0d" firstAttribute="bottom" secondItem="pkH-Qw-jM6" secondAttribute="bottom" id="6oO-Q0-Tf8"/>
                             <constraint firstItem="pkH-Qw-jM6" firstAttribute="leading" secondItem="xKX-h3-J0d" secondAttribute="leading" id="9lE-it-Wec"/>
+                            <constraint firstItem="O01-pk-hIP" firstAttribute="trailing" secondItem="xKX-h3-J0d" secondAttribute="trailing" id="DFn-E7-IUU"/>
+                            <constraint firstItem="O01-pk-hIP" firstAttribute="leading" secondItem="xKX-h3-J0d" secondAttribute="leading" id="KcU-lt-xCZ"/>
                             <constraint firstItem="xKX-h3-J0d" firstAttribute="trailing" secondItem="pkH-Qw-jM6" secondAttribute="trailing" id="VL7-S0-baV"/>
+                            <constraint firstItem="d7o-fP-BAB" firstAttribute="centerX" secondItem="QsA-wF-VFZ" secondAttribute="centerX" id="YBQ-Sa-tIG"/>
+                            <constraint firstItem="xKX-h3-J0d" firstAttribute="bottom" secondItem="pkH-Qw-jM6" secondAttribute="bottom" id="l8J-gu-B2G"/>
                             <constraint firstItem="pkH-Qw-jM6" firstAttribute="top" secondItem="xKX-h3-J0d" secondAttribute="top" id="nah-oL-WYv"/>
+                            <constraint firstItem="O01-pk-hIP" firstAttribute="bottom" secondItem="xKX-h3-J0d" secondAttribute="bottom" id="rbu-XJ-ks6"/>
+                            <constraint firstItem="d7o-fP-BAB" firstAttribute="centerY" secondItem="QsA-wF-VFZ" secondAttribute="centerY" constant="-20" id="wUP-EJ-41t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xKX-h3-J0d"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="CSb-jH-wnz"/>
                     <connections>
+                        <outlet property="addressLabel" destination="O01-pk-hIP" id="slM-JK-T40"/>
                         <outlet property="mapView" destination="pkH-Qw-jM6" id="0qu-uh-vpi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6u-Nc-FNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="858"/>
+            <point key="canvasLocation" x="1073.913043478261" y="857.8125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cxp-KQ-aUN">
@@ -181,4 +204,7 @@
             <point key="canvasLocation" x="1075.3623188405797" y="122.54464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pin" width="256" height="256"/>
+    </resources>
 </document>
