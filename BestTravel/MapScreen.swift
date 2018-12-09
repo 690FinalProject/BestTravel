@@ -76,7 +76,47 @@ class MapScreen: UIViewController {
         return CLLocation(latitude: latitude, longitude: longitude)
     }
     
+    func getDirection() {
+        guard let location = locationManager.location?.coordinate else {
+            
+            return
+        }
+        
+        let request = createDirectionsResquest(from: location)
+        let directions = MKDirections(request: request)
+        
+        directions.calculate { [unowned self] (response, error) in
+            guard let response = response else { return }
+            
+            for route in response.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+        }
+    }
+    
+    func createDirectionsResquest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request {
+        let destinstionCoordine = getCenterLocation(for: mapView).coordinate
+        let startingLocation = MKPlacemark(coordinate: coordinate)
+        let destination = MKPlacemark(coordinate: destinstionCoordine)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startingLocation)
+        request.destination = MKMapItem(placemark: destination)
+        request.transportType = .automobile
+        request.requestsAlternateRoutes = true
+        
+        return request
+    }
+    
+    @IBAction func goButtonTapped(_ sender: UIButton) {
+        getDirection()
+    }
+    
 }
+
+
+
 
 
 extension MapScreen: CLLocationManagerDelegate {
@@ -116,6 +156,13 @@ extension MapScreen: MKMapViewDelegate{
                 self.addressLabel.text = "\(streetNumber) \(streetName)"
             }
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendereFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .blue
+        
+        return renderer
     }
 }
 
