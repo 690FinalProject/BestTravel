@@ -101,9 +101,25 @@
                     <view key="view" contentMode="scaleToFill" id="7zi-D0-Hxk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-cd-rYb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="276"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BJc-cd-rYb" secondAttribute="height" multiplier="3:2" id="o38-Pk-6hd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BJc-cd-rYb" firstAttribute="trailing" secondItem="20e-Mv-G2L" secondAttribute="trailing" id="EoY-PS-2PZ"/>
+                            <constraint firstItem="BJc-cd-rYb" firstAttribute="top" secondItem="20e-Mv-G2L" secondAttribute="top" id="R12-kV-BOL"/>
+                            <constraint firstItem="BJc-cd-rYb" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" id="ulN-gY-DpL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="20e-Mv-G2L"/>
                     </view>
+                    <connections>
+                        <outlet property="spotImage" destination="BJc-cd-rYb" id="Mgq-ZF-omu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzV-AX-O64" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

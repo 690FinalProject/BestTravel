@@ -26,7 +26,7 @@ class SpotCell: UITableViewCell {
             let iconURL = URL(string: spot.IconURL)!
             spotImage.af_setImage(withURL: iconURL)
             
-            print(iconURL)
+            //print(spot.id)
             
         }
     }

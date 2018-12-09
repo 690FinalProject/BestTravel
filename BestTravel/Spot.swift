@@ -10,6 +10,7 @@ import Foundation
 
 class Spot {
     var spotName: String
+    var id: String
     var description: String
     var IconURLprefix: String
     var IconURLsuffix: String = "bg_64.png"
@@ -22,6 +23,7 @@ class Spot {
         let icon = categories![0]["icon"] as? [String: Any]
         
         spotName = venue!["name"] as? String ?? "No title"
+        id = venue!["id"] as? String ?? "No Id"
         description = categories![0]["name"] as? String ?? "No description"
         IconURLprefix = icon!["prefix"] as? String ?? "No IconURLprefix"
         IconURL = IconURLprefix + IconURLsuffix

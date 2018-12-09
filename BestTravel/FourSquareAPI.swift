@@ -12,7 +12,7 @@ class FourSquareAPI {
     
     static let client_id = "FXPLHIF0E053NMZ0F2SLUPBKBHL15WHJQ2HGKBZPEVGXFFRR"
     static let client_secret = "J0A0KQAMFSGR4MM0GKXX04MQH312SSGFY2JVV35KQBHN3THH"
-
+    
     var session: URLSession
     
     init() {
@@ -47,25 +47,6 @@ class FourSquareAPI {
                 completion(nil, error)
             }
         }
-        
-//        Alamofire.request(urlString).responseJSON { response in
-//            //debugPrint(response)
-//            guard
-//                let jsonDictionary = response.result.value as? [String: Any],
-//                let response = jsonDictionary["response"] as? [String: Any],
-//                let groups = response["groups"] as? [[String: Any]],
-//                let items = groups[0]["items"] as? [[String: Any]],
-//
-//                let venue = items[0]["venue"] as? [String: Any],
-//                let name = venue["name"] as? String
-//
-//                else {
-//                    return
-//            }
-//            print(venue)
-//            self.spots = Spot.spots(dictionaries: items)
-//
-//        }
         task.resume()
     }
 }
