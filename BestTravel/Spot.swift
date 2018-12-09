@@ -48,25 +48,6 @@ class Spot {
         spotLng = lng
     }
     
-    //        Alamofire.request(urlString).responseJSON { response in
-    //            //debugPrint(response)
-    //            guard
-    //                let jsonDictionary = response.result.value as? [String: Any],
-    //                let response = jsonDictionary["response"] as? [String: Any],
-    //                let groups = response["groups"] as? [[String: Any]],
-    //                let items = groups[0]["items"] as? [[String: Any]],
-    //
-    //                let venue = items[0]["venue"] as? [String: Any],
-    //                let name = venue["name"] as? String
-    //
-    //                else {
-    //                    return
-    //            }
-    //            print(venue)
-    //            self.spots = Spot.spots(dictionaries: items)
-    //
-    //        }
-    
     class func spots(dictionaries: [[String: Any]]) -> [Spot] {
         var spots: [Spot] = []
         for dictionary in dictionaries {

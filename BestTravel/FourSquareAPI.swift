@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class FourSquareAPI {
     
@@ -30,10 +31,22 @@ class FourSquareAPI {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyymmdd"
         let currentDate = formatter.string(from: date)
+        
+        // get current location
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization() // access the location when the app is using
+        if CLLocationManager.locationServicesEnabled() {
+            // locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        let locationLag: Double = (locationManager.location?.coordinate.latitude)!
+        let locationLng: Double = (locationManager.location?.coordinate.longitude)!
+        let currentLocation = "\(locationLag),\(locationLng)"
 
 
-        let url = URL(string: "https://api.foursquare.com/v2/venues/explore?near=SF&client_id=\(FourSquareAPI.client_id)&client_secret=\(FourSquareAPI.client_secret)&v=\(currentDate)")!
-
+        let url = URL(string: "https://api.foursquare.com/v2/venues/explore?near=\(currentLocation)&client_id=\(FourSquareAPI.client_id)&client_secret=\(FourSquareAPI.client_secret)&v=\(currentDate)")!
+        
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
 
         let task = session.dataTask(with: request) { (data, response, error) in

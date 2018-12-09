@@ -9,18 +9,24 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import CoreLocation
 
-class HomeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
     
     var spots: [Spot] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 150
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        
+        //navigationItem.titleView = searchBar
+        getCurrentLocation()
         
         fetchSpots()
     }
@@ -43,6 +49,42 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func getCurrentLocation() {
+        
+        // get user location
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization() // access the location when the app is using
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print(location.coordinate)
+        }
+    }
+    
+    // searchBar function
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let newSpot = searchText
+        print(newSpot)
+        //self.tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        fetchSpots()
+        searchBar.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
