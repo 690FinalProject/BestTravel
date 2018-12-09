@@ -15,11 +15,11 @@
 		4E9C82F421AF5CD700C50099 /* BestTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C82F321AF5CD700C50099 /* BestTravelTests.swift */; };
 		4E9C82FF21AF5CD700C50099 /* BestTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C82FE21AF5CD700C50099 /* BestTravelUITests.swift */; };
 		4EB9A4BC21B887A90072886C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB9A4BB21B887A90072886C /* DetailViewController.swift */; };
+		4EB9A4BE21BCF7E50072886C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB9A4BD21BCF7E50072886C /* Assets.xcassets */; };
 		4EBF39B421B0D88400281EEA /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF39B321B0D88400281EEA /* HomeTableViewController.swift */; };
 		4EBF39B621B0D9E800281EEA /* SpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBF39B521B0D9E800281EEA /* SpotCell.swift */; };
 		4ED9CEF121B5FE9B00343450 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED9CEF021B5FE9B00343450 /* Spot.swift */; };
 		4ED9CEF321B6055D00343450 /* FourSquareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED9CEF221B6055D00343450 /* FourSquareAPI.swift */; };
-		F8403A4821B9EC7700BE8798 /* Assets 15-46-16-256.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8403A4721B9EC7700BE8798 /* Assets 15-46-16-256.xcassets */; };
 		F8DF666221B7F1D70071BCF9 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF666121B7F1D70071BCF9 /* MapScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +54,7 @@
 		4E9C82FE21AF5CD700C50099 /* BestTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTravelUITests.swift; sourceTree = "<group>"; };
 		4E9C830021AF5CD700C50099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB9A4BB21B887A90072886C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4EB9A4BD21BCF7E50072886C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EBF39B321B0D88400281EEA /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		4EBF39B521B0D9E800281EEA /* SpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCell.swift; sourceTree = "<group>"; };
 		4ED9CEF021B5FE9B00343450 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		6BFBFBE3AA4301830F548DD8 /* Pods-BestTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestTravel/Pods-BestTravel.release.xcconfig"; sourceTree = "<group>"; };
 		CEA3B8E089651C7D8AF59AA1 /* Pods_BestTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D657C0BEEB06875524C24AD5 /* Pods-BestTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestTravel/Pods-BestTravel.debug.xcconfig"; sourceTree = "<group>"; };
-		F8403A4721B9EC7700BE8798 /* Assets 15-46-16-256.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets 15-46-16-256.xcassets"; path = "../../../../.Trash/Assets 15-46-16-256.xcassets"; sourceTree = "<group>"; };
 		F8DF666121B7F1D70071BCF9 /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +123,7 @@
 				4EBF39B521B0D9E800281EEA /* SpotCell.swift */,
 				4E9C82E221AF5CD600C50099 /* Main.storyboard */,
 				4E9C82E721AF5CD700C50099 /* LaunchScreen.storyboard */,
-				F8403A4721B9EC7700BE8798 /* Assets 15-46-16-256.xcassets */,
+				4EB9A4BD21BCF7E50072886C /* Assets.xcassets */,
 				4E9C82EA21AF5CD700C50099 /* Info.plist */,
 				4ED9CEF021B5FE9B00343450 /* Spot.swift */,
 				4ED9CEF221B6055D00343450 /* FourSquareAPI.swift */,
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E9C82E921AF5CD700C50099 /* LaunchScreen.storyboard in Resources */,
-				F8403A4821B9EC7700BE8798 /* Assets 15-46-16-256.xcassets in Resources */,
+				4EB9A4BE21BCF7E50072886C /* Assets.xcassets in Resources */,
 				4E9C82E421AF5CD600C50099 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
