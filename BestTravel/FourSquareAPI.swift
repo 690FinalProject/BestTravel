@@ -10,8 +10,13 @@ import Foundation
 
 class FourSquareAPI {
     
-    static let client_id = "FXPLHIF0E053NMZ0F2SLUPBKBHL15WHJQ2HGKBZPEVGXFFRR"
-    static let client_secret = "J0A0KQAMFSGR4MM0GKXX04MQH312SSGFY2JVV35KQBHN3THH"
+    // Jay's
+    // static let client_id = "FXPLHIF0E053NMZ0F2SLUPBKBHL15WHJQ2HGKBZPEVGXFFRR"
+    // static let client_secret = "J0A0KQAMFSGR4MM0GKXX04MQH312SSGFY2JVV35KQBHN3THH"
+    
+    // Gordon's
+    static let client_id = "1BRWPWKY4PIUBE2H4XO5X11QKA3L1E0VKCREOXA02O1YUJ0E"
+    static let client_secret = "RHQCWX0B52W411WRHTWZOOYXGUKW3FRYMQWCMFNABTIAB4Y4"
     
     var session: URLSession
     
@@ -28,7 +33,7 @@ class FourSquareAPI {
 
 
         let url = URL(string: "https://api.foursquare.com/v2/venues/explore?near=SF&client_id=\(FourSquareAPI.client_id)&client_secret=\(FourSquareAPI.client_secret)&v=\(currentDate)")!
-        
+
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
 
         let task = session.dataTask(with: request) { (data, response, error) in

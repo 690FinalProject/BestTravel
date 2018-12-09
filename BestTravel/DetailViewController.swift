@@ -13,6 +13,9 @@ import AlamofireImage
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var spotImage: UIImageView!
+    @IBOutlet weak var spotName: UILabel!
+    @IBOutlet weak var spotAddress: UILabel!
+    
     
     var spot: Spot?
     
@@ -21,6 +24,8 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         navigationItem.title = spot?.spotName
+        spotName.text = spot?.spotName
+        spotAddress.text = spot?.spotAddress
         
         fetchImages()
     }
@@ -49,7 +54,6 @@ class DetailViewController: UIViewController {
                 let imgAddress = "https://fastly.4sqi.net/img/general/360x240\(suffix)"
                 let imgURL = URL(string: imgAddress)!
                 self.spotImage.af_setImage(withURL: imgURL)
-                print(imgAddress)
             }
         }
     }

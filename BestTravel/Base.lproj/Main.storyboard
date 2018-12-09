@@ -108,17 +108,46 @@
                                     <constraint firstAttribute="width" secondItem="BJc-cd-rYb" secondAttribute="height" multiplier="3:2" id="o38-Pk-6hd"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twg-s2-dWu">
+                                <rect key="frame" x="20" y="384" width="374" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APN-7M-wOh">
+                                <rect key="frame" x="20" y="432.66666666666669" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500 Holloway Ave, San Francico, CA 94108" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkx-pF-qJe">
+                                <rect key="frame" x="20" y="466.66666666666669" width="374" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="APN-7M-wOh" firstAttribute="top" secondItem="twg-s2-dWu" secondAttribute="bottom" constant="20" id="0gj-sL-7mb"/>
+                            <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="twg-s2-dWu" secondAttribute="trailing" constant="20" id="1g0-0t-JxT"/>
+                            <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="xkx-pF-qJe" secondAttribute="trailing" constant="20" id="7Qf-XL-Trh"/>
+                            <constraint firstItem="xkx-pF-qJe" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="CeT-aH-DV2"/>
+                            <constraint firstItem="twg-s2-dWu" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="Cq9-Pt-cLM"/>
                             <constraint firstItem="BJc-cd-rYb" firstAttribute="trailing" secondItem="20e-Mv-G2L" secondAttribute="trailing" id="EoY-PS-2PZ"/>
                             <constraint firstItem="BJc-cd-rYb" firstAttribute="top" secondItem="20e-Mv-G2L" secondAttribute="top" id="R12-kV-BOL"/>
+                            <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="APN-7M-wOh" secondAttribute="trailing" constant="20" id="cUg-zu-Nj7"/>
+                            <constraint firstItem="twg-s2-dWu" firstAttribute="top" secondItem="BJc-cd-rYb" secondAttribute="bottom" constant="20" id="d3t-UE-QxK"/>
+                            <constraint firstItem="xkx-pF-qJe" firstAttribute="top" secondItem="APN-7M-wOh" secondAttribute="bottom" constant="10" id="kea-78-LyU"/>
                             <constraint firstItem="BJc-cd-rYb" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" id="ulN-gY-DpL"/>
+                            <constraint firstItem="APN-7M-wOh" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="y4H-fU-F07"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="20e-Mv-G2L"/>
                     </view>
                     <connections>
+                        <outlet property="spotAddress" destination="xkx-pF-qJe" id="NFS-XB-Q8s"/>
                         <outlet property="spotImage" destination="BJc-cd-rYb" id="Mgq-ZF-omu"/>
+                        <outlet property="spotName" destination="twg-s2-dWu" id="yyr-VU-JDl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzV-AX-O64" userLabel="First Responder" sceneMemberID="firstResponder"/>
