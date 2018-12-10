@@ -9,10 +9,13 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import CoreLocation
 
-class HomeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate{
+class HomeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate{
     
     var spots: [Spot] = []
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextfield: UITextField!
@@ -26,9 +29,9 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         self.searchTextfield.delegate = self
         
+        
+        getCurrentLocation()
         fetchSpots()
-        
-        
     }
     
     // hidden keyboard when user touch outside
@@ -66,6 +69,20 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
                 self.spots = spots
                 self.tableView.reloadData()
             }
+        }
+    }
+    
+    func getCurrentLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        if let locationLag: Double = (locationManager.location?.coordinate.latitude),
+            let locationLng: Double = (locationManager.location?.coordinate.longitude) {
+            FourSquareAPI.currentLocation = "\(locationLag),\(locationLng)"
+        } else {
+            FourSquareAPI.currentLocation = "SF"
         }
     }
     
