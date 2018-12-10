@@ -16,8 +16,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     static var spots: [Spot] = []
     
-    var spot: Spot?
-    
     var annotations = [MKPointAnnotation()]
     
     override func viewDidLoad() {
@@ -25,8 +23,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         // Do any additional setup after loading the view.
         getCurrentLocation()
+        addSpotOnMap()
+    }
+    
+    // get user current location in mapView
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
         
+        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: myLocation, span: span)
+        mapView.setRegion(region, animated: true)
         
+        self.mapView.showsUserLocation = true
+    }
+    
+    func getCurrentLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func addSpotOnMap() {
         // adding each spot into mapView
         for spot in MapViewController.spots {
             let lat = spot.spotLat
@@ -44,25 +63,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.addAnnotations(annotations)
     }
     
-    // get user current location in mapView
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
+    @IBAction func refreshLocaton(_ sender: Any) {
+        // remove all map annotations & clear annotaions list
+        mapView.removeAnnotations(annotations)
+        annotations.removeAll()
         
-        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegion(center: myLocation, span: span)
-        mapView.setRegion(region, animated: true)
-        
-        self.mapView.showsUserLocation = true
+        // add new annotations from list
+        addSpotOnMap()
     }
-    
-    func getCurrentLocation() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    
     
 }

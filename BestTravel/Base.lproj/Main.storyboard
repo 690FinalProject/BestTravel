@@ -255,7 +255,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TGi-YL-Ct0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Map View" id="EfL-dj-fOI"/>
+                    <navigationItem key="navigationItem" title="Map View" id="EfL-dj-fOI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="DLc-6L-zYF">
+                            <connections>
+                                <action selector="refreshLocaton:" destination="jQE-k9-ab9" id="0mr-vE-lp4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="IKF-97-yhW" id="5Bx-1q-bAs"/>
                     </connections>
