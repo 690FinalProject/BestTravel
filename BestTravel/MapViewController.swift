@@ -46,6 +46,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func addSpotOnMap() {
+        let annotationRegion = MKPointAnnotation()
+        
         // adding each spot into mapView
         for spot in MapViewController.spots {
             let lat = spot.spotLat
@@ -58,9 +60,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotation.coordinate = spotCoordinate
             annotation.title = spotName
             annotations.append(annotation)
-            print(spotName)
+            
+            // update last annotation coordinate
+            annotationRegion.coordinate = spotCoordinate
         }
         mapView.addAnnotations(annotations)
+        
+        // update Region
+        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let newLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(annotationRegion.coordinate.latitude, annotationRegion.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: newLocation, span: span)
+        mapView.setRegion(region, animated: true)
     }
     
     @IBAction func refreshLocaton(_ sender: Any) {
