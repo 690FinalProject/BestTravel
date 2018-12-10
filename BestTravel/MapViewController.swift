@@ -9,19 +9,39 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    
+    static var spots: [Spot] = []
+    
+    var spot: Spot?
+    
+    var annotations = [MKPointAnnotation()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        getCurrentLocation()
+        
+        
+        // adding each spot into mapView
+        for spot in MapViewController.spots {
+            let lat = spot.spotLat
+            let lng = spot.spotLng
+            let spotName = spot.spotName
+            let spotCoordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, lng)
+            
+            // adding each spot into MAP
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = spotCoordinate
+            annotation.title = spotName
+            annotations.append(annotation)
+            print(spotName)
+        }
+        mapView.addAnnotations(annotations)
     }
     
     // get user current location in mapView
@@ -35,15 +55,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         self.mapView.showsUserLocation = true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func getCurrentLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
-    */
-
+    
+    
+    
 }

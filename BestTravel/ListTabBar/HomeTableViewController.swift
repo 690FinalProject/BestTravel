@@ -67,6 +67,7 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
         FourSquareAPI().getVenue { (spots: [Spot]?, error: Error?) in
             if let spots = spots {
                 self.spots = spots
+                MapViewController.spots = spots
                 self.tableView.reloadData()
                 self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
             }
@@ -91,6 +92,7 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
         FourSquareAPI().getNewVenue { (spots: [Spot]?, error: Error?) in
             if let spots = spots {
                 self.spots = spots
+                MapViewController.spots = spots
                 self.tableView.reloadData()
                 self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
             } else {
