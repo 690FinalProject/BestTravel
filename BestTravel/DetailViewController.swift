@@ -41,19 +41,24 @@ class DetailViewController: UIViewController {
             let url = URL(string: "https://api.foursquare.com/v2/venues/\(id)/photos?&client_id=\(FourSquareAPI.client_id)&client_secret=\(FourSquareAPI.client_secret)&v=\(currentDate)")!
             
             Alamofire.request(url).responseJSON { (response) in
-                guard
+                if
                     let dataDictionary = response.result.value as? [String: Any],
                     let response = dataDictionary["response"] as? [String: Any],
                     let photos = response["photos"] as? [String: Any],
-                    let items = photos["items"] as? [[String: Any]],
-                    let suffix = items[0]["suffix"] as? String
-                
-                else {
-                    return
+                    let count = photos["count"] as? Int {
+                    if (count>0) {
+                        let items = photos["items"] as? [[String: Any]]
+                        let suffix = items![0]["suffix"] as! String
+                        
+                        let imgAddress = "https://fastly.4sqi.net/img/general/360x240\(suffix)"
+                        let imgURL = URL(string: imgAddress)!
+                        self.spotImage.af_setImage(withURL: imgURL)
+                    } else {
+                        let noImgAddress = "https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728"
+                        let noIMGURL = URL(string: noImgAddress)!
+                        self.spotImage.af_setImage(withURL: noIMGURL)
+                    }
                 }
-                let imgAddress = "https://fastly.4sqi.net/img/general/360x240\(suffix)"
-                let imgURL = URL(string: imgAddress)!
-                self.spotImage.af_setImage(withURL: imgURL)
             }
         }
     }

@@ -93,7 +93,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Best Travel" id="KwT-DP-YVY"/>
+                    <navigationItem key="navigationItem" title="Best Travel" id="KwT-DP-YVY">
+                        <barButtonItem key="leftBarButtonItem" title="My Location" id="uhj-tJ-sPn">
+                            <connections>
+                                <action selector="tapMyLocation:" destination="BYZ-38-t0r" id="SH5-O2-fen"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchTextfield" destination="4w4-BT-k7o" id="NQK-gM-UXm"/>
                         <outlet property="tableView" destination="b8E-Qe-3io" id="yXx-X5-b5x"/>

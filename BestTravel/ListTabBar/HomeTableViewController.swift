@@ -68,6 +68,7 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
             if let spots = spots {
                 self.spots = spots
                 self.tableView.reloadData()
+                self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
             }
         }
     }
@@ -91,6 +92,7 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
             if let spots = spots {
                 self.spots = spots
                 self.tableView.reloadData()
+                self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
             } else {
                 let alertController = UIAlertController(title: "Invalid Input", message: FourSquareAPI.errorMessage , preferredStyle: UIAlertController.Style.alert)
                 alertController.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default,handler: nil))
@@ -100,6 +102,10 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    @IBAction func tapMyLocation(_ sender: Any) {
+        getCurrentLocation()
+        fetchSpots()
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
