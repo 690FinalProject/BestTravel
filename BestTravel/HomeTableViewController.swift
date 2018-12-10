@@ -17,6 +17,8 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextfield: UITextField!
     
+    static var errorMessage = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 150
@@ -73,8 +75,7 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
                 self.spots = spots
                 self.tableView.reloadData()
             } else {
-                let alertController = UIAlertController(title: "Invalid Input", message:
-                    "Check your input and try again!", preferredStyle: UIAlertController.Style.alert)
+                let alertController = UIAlertController(title: "Invalid Input", message: FourSquareAPI.errorMessage , preferredStyle: UIAlertController.Style.alert)
                 alertController.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default,handler: nil))
                 
                 self.present(alertController, animated: true, completion: nil)

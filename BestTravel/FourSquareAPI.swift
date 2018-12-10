@@ -18,7 +18,10 @@ class FourSquareAPI {
     // Gordon's
     static let client_id = "1BRWPWKY4PIUBE2H4XO5X11QKA3L1E0VKCREOXA02O1YUJ0E"
     static let client_secret = "RHQCWX0B52W411WRHTWZOOYXGUKW3FRYMQWCMFNABTIAB4Y4"
+    
+    
     static var currentLocation = ""
+    static var errorMessage = ""
     
     var session: URLSession
     
@@ -98,7 +101,7 @@ class FourSquareAPI {
                     completion(spots, nil)
                 } else if (code == 400) {
                     let errorDetail = meta["errorDetail"] as! String
-                    
+                    FourSquareAPI.errorMessage = errorDetail
                     print(errorDetail)
                     completion(nil, error)
                 } else {
