@@ -12,7 +12,6 @@ import MapKit
 class MapScreen: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBOutlet weak var addressLabel: UILabel!
     
     let locationManager = CLLocationManager()

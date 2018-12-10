@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		474939DC104B5386DEF73588 /* Pods_BestTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA3B8E089651C7D8AF59AA1 /* Pods_BestTravel.framework */; };
+		4E8A805121BE347900E51530 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A805021BE347900E51530 /* MapViewController.swift */; };
 		4E9C82DF21AF5CD600C50099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C82DE21AF5CD600C50099 /* AppDelegate.swift */; };
-		4E9C82E121AF5CD600C50099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C82E021AF5CD600C50099 /* ViewController.swift */; };
 		4E9C82E421AF5CD600C50099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9C82E221AF5CD600C50099 /* Main.storyboard */; };
 		4E9C82E921AF5CD700C50099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9C82E721AF5CD700C50099 /* LaunchScreen.storyboard */; };
 		4E9C82F421AF5CD700C50099 /* BestTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C82F321AF5CD700C50099 /* BestTravelTests.swift */; };
@@ -41,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E8A805021BE347900E51530 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4E9C82DB21AF5CD600C50099 /* BestTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9C82DE21AF5CD600C50099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E9C82E021AF5CD600C50099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E9C82E321AF5CD600C50099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E9C82E821AF5CD700C50099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E9C82EA21AF5CD700C50099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +91,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E8A805221BE34B900E51530 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4ED9CEF221B6055D00343450 /* FourSquareAPI.swift */,
+				4ED9CEF021B5FE9B00343450 /* Spot.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4E8A805321BE34DE00E51530 /* ListTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4EBF39B321B0D88400281EEA /* HomeTableViewController.swift */,
+				4EBF39B521B0D9E800281EEA /* SpotCell.swift */,
+			);
+			path = ListTabBar;
+			sourceTree = "<group>";
+		};
 		4E9C82D221AF5CD600C50099 = {
 			isa = PBXGroup;
 			children = (
@@ -117,16 +135,14 @@
 			isa = PBXGroup;
 			children = (
 				4E9C82DE21AF5CD600C50099 /* AppDelegate.swift */,
-				4E9C82E021AF5CD600C50099 /* ViewController.swift */,
-				4EBF39B321B0D88400281EEA /* HomeTableViewController.swift */,
+				4E8A805221BE34B900E51530 /* API */,
+				4E8A805321BE34DE00E51530 /* ListTabBar */,
 				4EB9A4BB21B887A90072886C /* DetailViewController.swift */,
-				4EBF39B521B0D9E800281EEA /* SpotCell.swift */,
+				4E8A805021BE347900E51530 /* MapViewController.swift */,
 				4E9C82E221AF5CD600C50099 /* Main.storyboard */,
 				4E9C82E721AF5CD700C50099 /* LaunchScreen.storyboard */,
 				4EB9A4BD21BCF7E50072886C /* Assets.xcassets */,
 				4E9C82EA21AF5CD700C50099 /* Info.plist */,
-				4ED9CEF021B5FE9B00343450 /* Spot.swift */,
-				4ED9CEF221B6055D00343450 /* FourSquareAPI.swift */,
 				F8DF666121B7F1D70071BCF9 /* MapScreen.swift */,
 			);
 			path = BestTravel;
@@ -350,9 +366,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EBF39B421B0D88400281EEA /* HomeTableViewController.swift in Sources */,
-				4E9C82E121AF5CD600C50099 /* ViewController.swift in Sources */,
 				4ED9CEF121B5FE9B00343450 /* Spot.swift in Sources */,
 				F8DF666221B7F1D70071BCF9 /* MapScreen.swift in Sources */,
+				4E8A805121BE347900E51530 /* MapViewController.swift in Sources */,
 				4E9C82DF21AF5CD600C50099 /* AppDelegate.swift in Sources */,
 				4EBF39B621B0D9E800281EEA /* SpotCell.swift in Sources */,
 				4ED9CEF321B6055D00343450 /* FourSquareAPI.swift in Sources */,
