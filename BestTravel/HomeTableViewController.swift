@@ -9,26 +9,42 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-import CoreLocation
 
-class HomeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
+class HomeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate{
     
     var spots: [Spot] = []
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 150
         tableView.delegate = self
         tableView.dataSource = self
-        searchBar.delegate = self
-        
-        //navigationItem.titleView = searchBar
-        getCurrentLocation()
+        self.searchTextfield.delegate = self
         
         fetchSpots()
+        
+        
+    }
+    
+    // hidden keyboard when user touch outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // hidden keyboard when "Search" press
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextfield.resignFirstResponder()
+        print(textField.text!)
+        
+        // replace whitespeace for "%20" for url using.
+        FourSquareAPI.currentLocation = textField.text!.replacingOccurrences(of: " ", with: "%20")
+        fetchNewSpots()
+        
+        searchTextfield.text = ""
+        return true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,48 +67,31 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    func getCurrentLocation() {
-        
-        // get user location
-        let locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization() // access the location when the app is using
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+    func fetchNewSpots() {
+        FourSquareAPI().getNewVenue { (spots: [Spot]?, error: Error?) in
+            if let spots = spots {
+                self.spots = spots
+                self.tableView.reloadData()
+            } else {
+                let alertController = UIAlertController(title: "Invalid Input", message:
+                    "Check your input and try again!", preferredStyle: UIAlertController.Style.alert)
+                alertController.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print(location.coordinate)
-        }
-    }
     
-    // searchBar function
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let newSpot = searchText
-        print(newSpot)
-        //self.tableView.reloadData()
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.searchBar.showsCancelButton = true
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
-        searchBar.text = ""
-        fetchSpots()
-        searchBar.resignFirstResponder()
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
-        if let indexPath = tableView.indexPath(for: cell) {
-            let spot = spots[indexPath.row]
-            let detailViewController = segue.destination as! DetailViewController
-            detailViewController.spot = spot
+        if(segue.identifier == "GotoDetailView") {
+            let cell = sender as! UITableViewCell
+            if let indexPath = tableView.indexPath(for: cell) {
+                let spot = spots[indexPath.row]
+                let detailViewController = segue.destination as!  DetailViewController
+                detailViewController.spot = spot
+            }
         }
     }
 

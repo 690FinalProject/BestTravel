@@ -18,17 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8E-Qe-3io">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b8E-Qe-3io">
+                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search New Spots Here" id="G6p-ei-6RT">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpotCell" rowHeight="137" id="l0a-Lq-WgL" customClass="SpotCell" customModule="BestTravel" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="137"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SpotCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0a-Lq-WgL" id="3oS-Ip-XdS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="136.66666666666666"/>
@@ -70,16 +65,29 @@
                                             <outlet property="spotDescriptionLabel" destination="Aiz-ci-i72" id="Udt-KA-mHg"/>
                                             <outlet property="spotImage" destination="smc-kQ-dRy" id="4Wv-Sy-VGg"/>
                                             <outlet property="spotNameLabel" destination="Iyd-aS-V3l" id="7kO-e1-Bzb"/>
-                                            <segue destination="WFP-zt-ycb" kind="show" id="2Xw-kV-Tgb"/>
+                                            <segue destination="WFP-zt-ycb" kind="show" identifier="GotoDetailView" id="2Xw-kV-Tgb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Search New Spot Here" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4w4-BT-k7o">
+                                <rect key="frame" x="0.0" y="93" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4ll-YM-pjp"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4w4-BT-k7o" secondAttribute="trailing" id="1ST-Mb-DQO"/>
+                            <constraint firstItem="4w4-BT-k7o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="1gk-IE-s74"/>
+                            <constraint firstItem="4w4-BT-k7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NpI-Em-q3I"/>
                             <constraint firstItem="b8E-Qe-3io" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vdd-Wr-tBO"/>
-                            <constraint firstItem="b8E-Qe-3io" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xj8-UK-KJ2"/>
+                            <constraint firstItem="b8E-Qe-3io" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Xj8-UK-KJ2"/>
                             <constraint firstItem="b8E-Qe-3io" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dd3-Mb-wHd"/>
                             <constraint firstItem="b8E-Qe-3io" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lga-MP-w8Y"/>
                         </constraints>
@@ -87,7 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Best Travel" id="KwT-DP-YVY"/>
                     <connections>
-                        <outlet property="searchBar" destination="G6p-ei-6RT" id="gTn-G3-EEy"/>
+                        <outlet property="searchTextfield" destination="4w4-BT-k7o" id="NQK-gM-UXm"/>
                         <outlet property="tableView" destination="b8E-Qe-3io" id="yXx-X5-b5x"/>
                     </connections>
                 </viewController>
