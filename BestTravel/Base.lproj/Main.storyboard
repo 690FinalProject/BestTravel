@@ -36,14 +36,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyd-aS-V3l">
-                                                    <rect key="frame" x="136.66666666666666" y="14.999999999999998" width="262.33333333333337" height="26.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                    <rect key="frame" x="136.66666666666666" y="15" width="262.33333333333337" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aiz-ci-i72">
-                                                    <rect key="frame" x="136.66666666666666" y="61.333333333333343" width="262.33333333333337" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <rect key="frame" x="136.66666666666666" y="59.000000000000007" width="262.33333333333337" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -57,7 +57,7 @@
                                                 <constraint firstItem="smc-kQ-dRy" firstAttribute="top" secondItem="3oS-Ip-XdS" secondAttribute="top" constant="15" id="ido-6a-1hJ"/>
                                                 <constraint firstItem="Aiz-ci-i72" firstAttribute="leading" secondItem="smc-kQ-dRy" secondAttribute="trailing" constant="15" id="lvh-mZ-Dst"/>
                                                 <constraint firstAttribute="bottom" secondItem="smc-kQ-dRy" secondAttribute="bottom" constant="15" id="n79-fK-vju"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Aiz-ci-i72" secondAttribute="bottom" constant="15" id="trH-YO-8ba"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Aiz-ci-i72" secondAttribute="bottom" constant="10" id="trH-YO-8ba"/>
                                                 <constraint firstAttribute="trailing" secondItem="Iyd-aS-V3l" secondAttribute="trailing" constant="15" id="v5r-MO-6em"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -70,8 +70,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Search New Spot Here" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4w4-BT-k7o">
-                                <rect key="frame" x="0.0" y="93" width="414" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search New Spot Here" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4w4-BT-k7o">
+                                <rect key="frame" x="5" y="93" width="404" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4ll-YM-pjp"/>
                                 </constraints>
@@ -80,12 +80,12 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4w4-BT-k7o" secondAttribute="trailing" id="1ST-Mb-DQO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4w4-BT-k7o" secondAttribute="trailing" constant="5" id="1ST-Mb-DQO"/>
                             <constraint firstItem="4w4-BT-k7o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="1gk-IE-s74"/>
-                            <constraint firstItem="4w4-BT-k7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NpI-Em-q3I"/>
+                            <constraint firstItem="4w4-BT-k7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="NpI-Em-q3I"/>
                             <constraint firstItem="b8E-Qe-3io" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vdd-Wr-tBO"/>
                             <constraint firstItem="b8E-Qe-3io" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Xj8-UK-KJ2"/>
                             <constraint firstItem="b8E-Qe-3io" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dd3-Mb-wHd"/>
@@ -298,6 +298,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="E3T-bv-T9D" kind="relationship" relationship="viewControllers" id="U6d-KN-MW8"/>
@@ -313,7 +315,7 @@
         <scene sceneID="QVr-LX-DuV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E3T-bv-T9D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" id="hEb-o9-N2O"/>
+                    <tabBarItem key="tabBarItem" title="List" image="icons8-gps_device" id="hEb-o9-N2O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KxS-Fi-edK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -332,7 +334,7 @@
         <scene sceneID="aCW-Me-Grg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WNW-P6-6gz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="Z5S-ac-Rj3"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icons8-map_marker" id="Z5S-ac-Rj3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i8d-b1-d05">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -349,6 +351,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-gps_device" width="24" height="24"/>
+        <image name="icons8-map_marker" width="26" height="26"/>
         <image name="pin" width="256" height="256"/>
     </resources>
 </document>

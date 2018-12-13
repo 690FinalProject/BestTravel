@@ -24,7 +24,7 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 150
+        tableView.rowHeight = 120
         tableView.delegate = self
         tableView.dataSource = self
         self.searchTextfield.delegate = self
