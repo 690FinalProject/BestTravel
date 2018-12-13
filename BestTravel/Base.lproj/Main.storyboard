@@ -188,71 +188,6 @@
             </objects>
             <point key="canvasLocation" x="2950.7246376811595" y="122.54464285714285"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="Rzg-X3-r3e">
-            <objects>
-                <viewController id="CM1-Iv-f6w" customClass="MapScreen" customModule="BestTravel" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QsA-wF-VFZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pkH-Qw-jM6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <connections>
-                                    <outlet property="delegate" destination="CM1-Iv-f6w" id="Huf-2h-4Qa"/>
-                                </connections>
-                            </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="d7o-fP-BAB">
-                                <rect key="frame" x="187" y="408" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7Wc-IU-7Zq"/>
-                                    <constraint firstAttribute="width" constant="40" id="Cfe-xH-3ie"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="OSf-FL-Nd7"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="lzL-o5-pcO"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O01-pk-hIP">
-                                <rect key="frame" x="0.0" y="762" width="414" height="51"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOd-Qv-P3Z">
-                                <rect key="frame" x="294" y="671" width="64" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="GO"/>
-                                <connections>
-                                    <action selector="goButtonTapped:" destination="CM1-Iv-f6w" eventType="touchUpInside" id="ADN-JN-gGq"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="xKX-h3-J0d" firstAttribute="bottom" secondItem="pkH-Qw-jM6" secondAttribute="bottom" id="6oO-Q0-Tf8"/>
-                            <constraint firstItem="pkH-Qw-jM6" firstAttribute="leading" secondItem="xKX-h3-J0d" secondAttribute="leading" id="9lE-it-Wec"/>
-                            <constraint firstItem="O01-pk-hIP" firstAttribute="trailing" secondItem="xKX-h3-J0d" secondAttribute="trailing" id="DFn-E7-IUU"/>
-                            <constraint firstItem="O01-pk-hIP" firstAttribute="leading" secondItem="xKX-h3-J0d" secondAttribute="leading" id="KcU-lt-xCZ"/>
-                            <constraint firstItem="xKX-h3-J0d" firstAttribute="trailing" secondItem="pkH-Qw-jM6" secondAttribute="trailing" id="VL7-S0-baV"/>
-                            <constraint firstItem="d7o-fP-BAB" firstAttribute="centerX" secondItem="QsA-wF-VFZ" secondAttribute="centerX" id="YBQ-Sa-tIG"/>
-                            <constraint firstItem="xKX-h3-J0d" firstAttribute="bottom" secondItem="pkH-Qw-jM6" secondAttribute="bottom" id="l8J-gu-B2G"/>
-                            <constraint firstItem="pkH-Qw-jM6" firstAttribute="top" secondItem="xKX-h3-J0d" secondAttribute="top" id="nah-oL-WYv"/>
-                            <constraint firstItem="O01-pk-hIP" firstAttribute="bottom" secondItem="xKX-h3-J0d" secondAttribute="bottom" id="rbu-XJ-ks6"/>
-                            <constraint firstItem="d7o-fP-BAB" firstAttribute="centerY" secondItem="QsA-wF-VFZ" secondAttribute="centerY" constant="-20" id="wUP-EJ-41t"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xKX-h3-J0d"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="CSb-jH-wnz"/>
-                    <connections>
-                        <outlet property="addressLabel" destination="O01-pk-hIP" id="slM-JK-T40"/>
-                        <outlet property="mapView" destination="pkH-Qw-jM6" id="0qu-uh-vpi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v6u-Nc-FNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="136" y="1077"/>
-        </scene>
         <!--Map View-->
         <scene sceneID="5p9-fq-GMx">
             <objects>
@@ -303,7 +238,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="E3T-bv-T9D" kind="relationship" relationship="viewControllers" id="U6d-KN-MW8"/>
-                        <segue destination="CM1-Iv-f6w" kind="relationship" relationship="viewControllers" id="Vdn-te-o5i"/>
                         <segue destination="WNW-P6-6gz" kind="relationship" relationship="viewControllers" id="ZKp-za-0rX"/>
                     </connections>
                 </tabBarController>
@@ -353,6 +287,5 @@
     <resources>
         <image name="icons8-gps_device" width="24" height="24"/>
         <image name="icons8-map_marker" width="26" height="26"/>
-        <image name="pin" width="256" height="256"/>
     </resources>
 </document>
