@@ -12,12 +12,12 @@ import CoreLocation
 class FourSquareAPI {
     
     // Jay's
-    static let client_id = "FXPLHIF0E053NMZ0F2SLUPBKBHL15WHJQ2HGKBZPEVGXFFRR"
-    static let client_secret = "J0A0KQAMFSGR4MM0GKXX04MQH312SSGFY2JVV35KQBHN3THH"
+    // static let client_id = "FXPLHIF0E053NMZ0F2SLUPBKBHL15WHJQ2HGKBZPEVGXFFRR"
+    // static let client_secret = "J0A0KQAMFSGR4MM0GKXX04MQH312SSGFY2JVV35KQBHN3THH"
     
     // Gordon's
-    // static let client_id = "1BRWPWKY4PIUBE2H4XO5X11QKA3L1E0VKCREOXA02O1YUJ0E"
-    // static let client_secret = "RHQCWX0B52W411WRHTWZOOYXGUKW3FRYMQWCMFNABTIAB4Y4"
+    static let client_id = "1BRWPWKY4PIUBE2H4XO5X11QKA3L1E0VKCREOXA02O1YUJ0E"
+    static let client_secret = "RHQCWX0B52W411WRHTWZOOYXGUKW3FRYMQWCMFNABTIAB4Y4"
     
     
     static var currentLocation = ""
