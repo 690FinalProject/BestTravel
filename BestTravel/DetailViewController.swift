@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var spotImage: UIImageView!
     @IBOutlet weak var spotName: UILabel!
     @IBOutlet weak var spotAddress: UILabel!
+    @IBOutlet weak var spotTips: UILabel!
     
     
     var spot: Spot?
@@ -38,9 +39,9 @@ class DetailViewController: UIViewController {
         let currentDate = formatter.string(from: date)
         
         if let id = spot?.id {
-            let url = URL(string: "https://api.foursquare.com/v2/venues/\(id)/photos?&client_id=\(FourSquareAPI.client_id)&client_secret=\(FourSquareAPI.client_secret)&v=\(currentDate)")!
+            let photoURL = URL(string: "https://api.foursquare.com/v2/venues/\(id)/photos?&client_id=\(FourSquareAPI.client_id)&client_secret=\(FourSquareAPI.client_secret)&v=\(currentDate)")!
             
-            Alamofire.request(url).responseJSON { (response) in
+            Alamofire.request(photoURL).responseJSON { (response) in
                 if
                     let dataDictionary = response.result.value as? [String: Any],
                     let response = dataDictionary["response"] as? [String: Any],
@@ -60,6 +61,27 @@ class DetailViewController: UIViewController {
                     }
                 }
             }
+            
+            let tipsURL = URL(string: "https://api.foursquare.com/v2/venues/\(id)/tips?&client_id=\(FourSquareAPI.client_id)&client_secret=\(FourSquareAPI.client_secret)&v=\(currentDate)")!
+            
+            Alamofire.request(tipsURL).responseJSON { (response) in
+                if
+                    let dataDictionary = response.result.value as? [String: Any],
+                    let response = dataDictionary["response"] as? [String: Any],
+                    let tips = response["tips"] as? [String: Any],
+                    let count = tips["count"] as? Int {
+                    if (count>0) {
+                        let items = tips["items"] as? [[String: Any]]
+                        let text = items![0]["text"] as! String
+
+                        self.spotTips.text = text
+                    } else {
+                        self.spotTips.text = "No tips guide for this spot yet!"
+                    }
+                }
+            }
+            
+
         }
     }
     

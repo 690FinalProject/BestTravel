@@ -118,25 +118,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-cd-rYb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="276"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="233"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="BJc-cd-rYb" secondAttribute="height" multiplier="3:2" id="o38-Pk-6hd"/>
+                                    <constraint firstAttribute="width" secondItem="BJc-cd-rYb" secondAttribute="height" multiplier="16:9" id="o38-Pk-6hd"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twg-s2-dWu">
-                                <rect key="frame" x="20" y="384" width="374" height="28.666666666666686"/>
+                                <rect key="frame" x="20" y="341" width="374" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APN-7M-wOh">
-                                <rect key="frame" x="20" y="432.66666666666669" width="374" height="24"/>
+                                <rect key="frame" x="20" y="389.66666666666669" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500 Holloway Ave, San Francico, CA 94108" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkx-pF-qJe">
-                                <rect key="frame" x="20" y="466.66666666666669" width="374" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="423.66666666666669" width="374" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Aa-Zk-rGw">
+                                <rect key="frame" x="20" y="464" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips guide summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8U-HM-8ba">
+                                <rect key="frame" x="20" y="498" width="374" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -146,14 +158,20 @@
                         <constraints>
                             <constraint firstItem="APN-7M-wOh" firstAttribute="top" secondItem="twg-s2-dWu" secondAttribute="bottom" constant="20" id="0gj-sL-7mb"/>
                             <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="twg-s2-dWu" secondAttribute="trailing" constant="20" id="1g0-0t-JxT"/>
+                            <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="0Aa-Zk-rGw" secondAttribute="trailing" constant="20" id="7DA-EW-qUz"/>
                             <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="xkx-pF-qJe" secondAttribute="trailing" constant="20" id="7Qf-XL-Trh"/>
                             <constraint firstItem="xkx-pF-qJe" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="CeT-aH-DV2"/>
                             <constraint firstItem="twg-s2-dWu" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="Cq9-Pt-cLM"/>
                             <constraint firstItem="BJc-cd-rYb" firstAttribute="trailing" secondItem="20e-Mv-G2L" secondAttribute="trailing" id="EoY-PS-2PZ"/>
+                            <constraint firstItem="S8U-HM-8ba" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="QhP-vr-2HI"/>
                             <constraint firstItem="BJc-cd-rYb" firstAttribute="top" secondItem="20e-Mv-G2L" secondAttribute="top" id="R12-kV-BOL"/>
+                            <constraint firstItem="0Aa-Zk-rGw" firstAttribute="top" secondItem="xkx-pF-qJe" secondAttribute="bottom" constant="20" id="TKX-e2-a4T"/>
+                            <constraint firstItem="S8U-HM-8ba" firstAttribute="top" secondItem="0Aa-Zk-rGw" secondAttribute="bottom" constant="10" id="aYV-he-S1L"/>
+                            <constraint firstItem="0Aa-Zk-rGw" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="bwU-eA-1Fm"/>
                             <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="APN-7M-wOh" secondAttribute="trailing" constant="20" id="cUg-zu-Nj7"/>
                             <constraint firstItem="twg-s2-dWu" firstAttribute="top" secondItem="BJc-cd-rYb" secondAttribute="bottom" constant="20" id="d3t-UE-QxK"/>
                             <constraint firstItem="xkx-pF-qJe" firstAttribute="top" secondItem="APN-7M-wOh" secondAttribute="bottom" constant="10" id="kea-78-LyU"/>
+                            <constraint firstItem="20e-Mv-G2L" firstAttribute="trailing" secondItem="S8U-HM-8ba" secondAttribute="trailing" constant="20" id="tkI-8N-b0o"/>
                             <constraint firstItem="BJc-cd-rYb" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" id="ulN-gY-DpL"/>
                             <constraint firstItem="APN-7M-wOh" firstAttribute="leading" secondItem="20e-Mv-G2L" secondAttribute="leading" constant="20" id="y4H-fU-F07"/>
                         </constraints>
@@ -163,6 +181,7 @@
                         <outlet property="spotAddress" destination="xkx-pF-qJe" id="NFS-XB-Q8s"/>
                         <outlet property="spotImage" destination="BJc-cd-rYb" id="Mgq-ZF-omu"/>
                         <outlet property="spotName" destination="twg-s2-dWu" id="yyr-VU-JDl"/>
+                        <outlet property="spotTips" destination="S8U-HM-8ba" id="QJ5-Mc-8DU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzV-AX-O64" userLabel="First Responder" sceneMemberID="firstResponder"/>

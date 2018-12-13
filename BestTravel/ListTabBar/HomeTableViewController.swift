@@ -42,7 +42,6 @@ class HomeTableViewController: UIViewController, UITableViewDataSource, UITableV
     // hidden keyboard when "Search" press
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextfield.resignFirstResponder()
-        print(textField.text!)
         
         // replace whitespeace for "%20" for url using.
         FourSquareAPI.currentLocation = textField.text!.replacingOccurrences(of: " ", with: "%20")
