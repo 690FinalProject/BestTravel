@@ -22,6 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.mapView.showsUserLocation = true
         getCurrentLocation()
         addSpotOnMap()
     }
